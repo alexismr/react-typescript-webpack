@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const ROOT = path.resolve(__dirname, '..');
 console.log('@@@@@@@@@ USING DEVELOPMENT @@@@@@@@@@@@@@@');
@@ -20,7 +21,13 @@ module.exports = {
         path: path.resolve(__dirname, '../dist/')
     },
     resolve: {
+        plugins: [new TsconfigPathsPlugin({
+            baseUrl: path.resolve(__dirname, '.'),
+            configFile: path.resolve(__dirname, './tsconfig.dev.json'),
+            mainFields: ['browser', 'main'],
+           })],
         extensions: ['.ts', '.tsx', '.js']
+      
     },
     devServer: {
         historyApiFallback: true,

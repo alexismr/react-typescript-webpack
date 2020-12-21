@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 
 const ROOT = path.resolve(__dirname, '..');
@@ -20,6 +21,11 @@ module.exports = {
         path: path.resolve(__dirname, '../dist/')
     },
     resolve: {
+      plugins: [new TsconfigPathsPlugin({
+        baseUrl: path.resolve(__dirname, '.'),
+        configFile: path.resolve(__dirname, './tsconfig.prod.json'),
+        mainFields: ['browser', 'main'],
+       })],
         extensions: ['.ts', '.tsx', '.js']
     },
     module: {
@@ -67,11 +73,7 @@ module.exports = {
       ],
       optimization: {
         minimize: true,
-        minimizer: [
-          // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
-          // `...`,
-          new CssMinimizerPlugin(),
-        ],
+        minimizer: [ new CssMinimizerPlugin() ],
       },
 }
 

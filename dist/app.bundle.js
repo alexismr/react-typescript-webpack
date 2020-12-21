@@ -20,6 +20,13 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ 159:
+/***/ (() => {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
 /***/ 344:
 /***/ (() => {
 
@@ -465,6 +472,24 @@ if (true) {
 
 /***/ }),
 
+/***/ 251:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+/** @license React v17.0.1
+ * react-jsx-runtime.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+__webpack_require__(418);var f=__webpack_require__(294),g=60103;exports.Fragment=60107;if("function"===typeof Symbol&&Symbol.for){var h=Symbol.for;g=h("react.element");exports.Fragment=h("react.fragment")}var m=f.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,n=Object.prototype.hasOwnProperty,p={key:!0,ref:!0,__self:!0,__source:!0};
+function q(c,a,k){var b,d={},e=null,l=null;void 0!==k&&(e=""+k);void 0!==a.key&&(e=""+a.key);void 0!==a.ref&&(l=a.ref);for(b in a)n.call(a,b)&&!p.hasOwnProperty(b)&&(d[b]=a[b]);if(c&&c.defaultProps)for(b in a=c.defaultProps,a)void 0===d[b]&&(d[b]=a[b]);return{$$typeof:g,type:c,key:e,ref:l,props:d,_owner:m.current}}exports.jsx=q;exports.jsxs=q;
+
+
+/***/ }),
+
 /***/ 408:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
@@ -504,6 +529,19 @@ exports.useLayoutEffect=function(a,b){return S().useLayoutEffect(a,b)};exports.u
 
 if (true) {
   module.exports = __webpack_require__(408);
+} else {}
+
+
+/***/ }),
+
+/***/ 893:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+if (true) {
+  module.exports = __webpack_require__(251);
 } else {}
 
 
@@ -557,17 +595,31 @@ if (true) {
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 var tslib_1 = __webpack_require__(655);
-var react_1 = tslib_1.__importDefault(__webpack_require__(294));
+var jsx_runtime_1 = __webpack_require__(893);
 var logo_svg_1 = tslib_1.__importDefault(__webpack_require__(898));
 __webpack_require__(405);
+var Container_1 = tslib_1.__importDefault(__webpack_require__(491));
 function App() {
-    return (react_1.default.createElement("div", { className: "App" },
-        react_1.default.createElement("header", { className: "App-header" },
-            react_1.default.createElement("img", { src: logo_svg_1.default, className: "App-logo", alt: "logo" }),
-            react_1.default.createElement("p", null, "configuracion inicial"),
-            react_1.default.createElement("a", { className: "App-link", href: "https://reactjs.org", target: "_blank", rel: "noopener noreferrer" }, "Learn React"))));
+    return (jsx_runtime_1.jsx("div", tslib_1.__assign({ className: "App" }, { children: jsx_runtime_1.jsxs("header", tslib_1.__assign({ className: "App-header" }, { children: [jsx_runtime_1.jsx("img", { src: logo_svg_1.default, className: "App-logo", alt: "logo" }, void 0),
+                jsx_runtime_1.jsx("p", { children: "configuracion inicial" }, void 0),
+                jsx_runtime_1.jsx(Container_1.default, {}, void 0)] }), void 0) }), void 0));
 }
 exports.default = App;
+
+
+/***/ }),
+
+/***/ 491:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+var tslib_1 = __webpack_require__(655);
+var jsx_runtime_1 = __webpack_require__(893);
+var Container_module_scss_1 = tslib_1.__importDefault(__webpack_require__(159));
+var Container = function () { return (jsx_runtime_1.jsx("div", tslib_1.__assign({ className: Container_module_scss_1.default.Container, "data-testid": "Container" }, { children: "Container Component IS WORKING!" }), void 0)); };
+exports.default = Container;
 
 
 /***/ }),
@@ -580,16 +632,13 @@ var __webpack_unused_export__;
 
 __webpack_unused_export__ = ({ value: true });
 var tslib_1 = __webpack_require__(655);
+var jsx_runtime_1 = __webpack_require__(893);
 var react_1 = tslib_1.__importDefault(__webpack_require__(294));
 var react_dom_1 = tslib_1.__importDefault(__webpack_require__(935));
 __webpack_require__(344);
 var App_1 = tslib_1.__importDefault(__webpack_require__(957));
 var reportWebVitals_1 = tslib_1.__importDefault(__webpack_require__(567));
-react_dom_1.default.render(react_1.default.createElement(react_1.default.StrictMode, null,
-    react_1.default.createElement(App_1.default, null)), document.getElementById('root'));
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+react_dom_1.default.render(jsx_runtime_1.jsx(react_1.default.StrictMode, { children: jsx_runtime_1.jsx(App_1.default, {}, void 0) }, void 0), document.getElementById('root'));
 reportWebVitals_1.default();
 
 
